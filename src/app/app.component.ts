@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'pipes';
+export class AppComponent {  
+  name = 'Rigoberta'
+  array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  PI = Math.PI
 }
