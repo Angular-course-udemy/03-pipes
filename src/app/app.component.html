@@ -1,4 +1,5 @@
 <div class="container">
+  <br>
   <h1>Pipes</h1>
   <hr/>
   <table class="table">
@@ -37,13 +38,79 @@
       </tr>
       <tr>
         <td>{{ PI }}</td>
-        <td>number:'2.2-6' decimals</td>
+        <td>number: '2.2-6' decimals</td>
         <td>{{ PI | number:'2.2-6' }}</td>
+      </tr>
+      <tr>
+        <td>{{ a }}</td>
+        <td>percent: '2.2-5'</td>
+        <td>{{ a | percent:'2.2-5' }}</td>
+      </tr>
+      <tr>
+        <td>{{ salary }}</td>
+        <td>currency</td>
+        <td>{{ salary | currency }}</td>
+      </tr>
+      <tr>
+        <td>{{ salary }}</td>
+        <td>currency: 'EUR':true:'4.0-0'</td>
+        <td>{{ salary | currency:'EUR':true:'4.0-0' }}</td>
+      </tr>
+      <tr>
+        <td>{{ salary }}</td>
+        <td>number: '.2-2'</td>
+        <td>{{ salary | number:'.2-2' }}</td>
+      </tr>
+      <tr>
+        <td>{{ promiseValues }}</td>
+        <td>async</td>
+        <td>{{ promiseValues | async }}</td>
+      </tr>
+      <tr>
+        <td>{{ date }}</td>
+        <td>date: 'medium'</td>
+        <td>{{ date | date: 'medium' }}</td>
+      </tr>
+      <tr>
+        <td>{{ date }}</td>
+        <td>date: 'MMMM - dd'</td>
+        <td>{{ date | date: 'MMMM - dd' }}</td>
+      </tr>
+      <tr>
+        <td>{{ nameComp }}</td>
+        <td>capitalize</td>
+        <td>{{ nameComp | capitalize }}</td>
+      </tr>
+      <tr>
+        <td>{{ nameComp }}</td>
+        <td>capitalize</td>
+        <td>{{ nameComp | capitalize:true }}</td>
+      </tr>
+      <tr>
+        <td>{{ password }}</td>
+        <td>password:{{ active }}<br>
+          <button (click)='active = !active' type='button' class='btn btn-outline-primary'>{{ active ? 'Show' : 'Hide' }}</button>
+        </td>
+        <td>{{ password | password:active }}</td>
       </tr>
     </tbody>
   </table>
-  <h4>Slice list</h4>
-  <ul>
-    <li *ngFor='let i of array | slice:5:20'>{{ i }}</li>
-  </ul>
+  <div>
+    <h4>Slice list</h4>
+    <ul>
+      <li *ngFor='let i of array | slice:5:20'>{{ i }}</li>
+    </ul>
+  </div>
+  <br>
+  <br>
+  <div>
+    <h4>JSON</h4>
+    <pre>{{ hero | json}}</pre>
+  </div>
+  <br>
+  <br>
+  <div>
+    <h4>YouTube Video</h4>
+    <iframe width="560" height="315" [src]="video | domsecure:'https://www.youtube.com/embed/' " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+  </div>
 </div>
